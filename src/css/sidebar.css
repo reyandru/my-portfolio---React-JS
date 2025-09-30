@@ -1,0 +1,56 @@
+
+aside{
+  border: 1px solid black;
+  width: 18%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  row-gap: 2rem;
+  position: fixed;
+}
+.navs-wrapper{
+  height: 75%;
+  width: 100%;
+}
+
+.navs{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
+}
+
+.nav{
+  width: 70%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  column-gap: 2rem;
+  font-size: 1.3rem;
+  position: relative;
+}
+
+a{
+   text-decoration: none;
+  color: black;
+}
+
+
+.hovers {
+  background-color: rgb(40, 233, 19);
+  position: absolute;
+  width: 0;
+  height: 0.3rem;
+  border-radius: 20px; 
+  bottom: -0.5rem;
+  left: 0;
+  transition: all 0.3s ease;
+}
+
+.nav:hover .hovers {
+  width: 100%;
+}
+
+
