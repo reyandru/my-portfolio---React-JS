@@ -1,19 +1,17 @@
-import React from 'react';
+import { useState } from 'react';
 import Sidebar from '../reusable/Sidebar';
 import '../css/home.css';
 import '../css/hasSideBar.css';
 
 function Home() {
+  const [isCollapse, setIsCollapse] = useState(false);
+
   return (
     <>
-    <Sidebar />
-    <section className="container">
-      <div className="section-head">
-        <h1 className='title'>Home</h1>
-      </div>
-    </section>
+      <Sidebar isCollapse={isCollapse} setIsCollapse={setIsCollapse} />
+      <section className={`${isCollapse ? 'collapse' : 'container'}`}>
+      </section>
     </>
- 
   );
 }
 

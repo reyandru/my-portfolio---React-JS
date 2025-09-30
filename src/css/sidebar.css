@@ -5,10 +5,24 @@ aside{
   height: 100%;
   display: flex;
   align-items: center;
+  background-color: #D9D9D9;
   flex-direction: column;
   row-gap: 2rem;
   position: fixed;
+  transition: all 0.3s ease;
 }
+
+aside.collapse{
+  width: 5%;
+}
+
+.lightText{
+  color:white;
+  transition: all 0.3s ease;
+}
+
+
+
 .navs-wrapper{
   height: 75%;
   width: 100%;
@@ -20,20 +34,28 @@ aside{
   flex-direction: column;
   justify-content: space-around;
   height: 100%;
+  
 }
 
 .nav{
   width: 70%;
+  height: 10%;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: flex-start;
   column-gap: 2rem;
   font-size: 1.3rem;
   position: relative;
+  cursor: pointer;
+}
+
+.logo{
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 a{
-   text-decoration: none;
+  text-decoration: none;
   color: black;
 }
 
@@ -44,13 +66,55 @@ a{
   width: 0;
   height: 0.3rem;
   border-radius: 20px; 
-  bottom: -0.5rem;
+  bottom: 0.1rem;
   left: 0;
   transition: all 0.3s ease;
 }
 
 .nav:hover .hovers {
-  width: 100%;
+  width: 90%;
 }
 
+.settings{
+  position: relative;
+}
+.settings-wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+  background-color:burlywood;
+  height: 0;
+  overflow: hidden; 
+  top: 3.4rem;
+  left: 0;
+  z-index: 99;
+  transition: all 0.3s ease;
+}
+
+.collapseSettings{
+ top: 0;
+ left: 3.8rem;
+ z-index: 999;
+ width: 10rem;
+}
+
+.show{
+   height: 4rem;
+  padding: 1rem;
+  z-index: 99;
+}
+.theme-btn{
+ display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 100%;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+  border: 1px solid black;
+  transition: all 0.3s ease;
+}
 
