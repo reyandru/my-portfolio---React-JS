@@ -27,6 +27,7 @@ import settingsNav from './settings.png';
 import skillsNav from './skills.png';
 import togaMe from './toga.png';
 import troubleShootIcon from './troubleshoot.png';
+import resume from './Bariata, Rei Andrew C._Portfolio.docx';
 
 export {
   onebyone,
@@ -57,5 +58,6 @@ export {
   settingsNav,
   skillsNav,
   togaMe,
-  troubleShootIcon
+  troubleShootIcon,
+  resume
 };
