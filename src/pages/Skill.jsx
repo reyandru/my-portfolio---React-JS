@@ -8,7 +8,7 @@ function Skill() {
   return (
     <>
       <Sidebar isCollapse={isCollapse} setIsCollapse={setIsCollapse} />
-      <section className={`${isCollapse ? 'collapses' : 'container'}`}>
+      <section className={`${isCollapse ? 'skills-collapses' : 'skills-container'}`}>
         <div className="section-head">
           <h1 className='title'>Skills</h1>
         </div>

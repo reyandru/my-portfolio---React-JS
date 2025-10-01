@@ -1,3 +1,15 @@
-.container{
+.contact-container{
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.contact-collapses{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
   height: 100vh;
 }

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Sidebar from '../reusable/Sidebar';
 import '../css/hasSideBar.css';
+import '../css/project.css'
 
 function Project() {
   const [isCollapse, setIsCollapse] = useState(false);
@@ -8,7 +9,7 @@ function Project() {
   return (
     <>
       <Sidebar isCollapse={isCollapse} setIsCollapse={setIsCollapse} />
-      <section className={`${isCollapse ? 'collapses' : 'container'}`}>
+      <section className={`${isCollapse ? 'project-collapses' : 'project-container'}`}>
         <div className="section-head">
           <h1 className='title'>Projects</h1>
         </div>

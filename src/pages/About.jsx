@@ -10,7 +10,7 @@ function About() {
   return (
     <>
       <Sidebar isCollapse={isCollapse} setIsCollapse={setIsCollapse} />
-      <section className={`${isCollapse ? 'collapses' : 'container'}`}>
+      <section className={`${isCollapse ? 'about-collapses' : 'about-container'}`}>
         <div className="section-head">
           <h1 className='title'>About</h1>
           <img src={onebyone} alt="" className='myImg' height={150} />

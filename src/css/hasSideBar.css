@@ -1,11 +1,11 @@
-.container{
+.container, .about-container,.skills-container, .contact-container, .project-container{
   padding: 1rem;
   width: 82.2%;
   margin-left: 17.1rem;
   transition: all 0.3s ease;
 }
 
-.collapses{
+.collapses, .about-collapses ,.skills-collapses, .contact-collapses, .project-collapses{
   padding: 1rem;
   width: 94.9%;
   margin-left: 4.9rem;
