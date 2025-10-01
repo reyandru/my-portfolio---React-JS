@@ -1,6 +1,94 @@
 .container{
-  border: 1px solid black;
   height: 100vh;
-  width: 82%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
+.collapses{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100vh;
+}
+
+.home-info, .home-img{
+  display:flex;
+  height: 100%;
+}
+
+.home-img{
+  align-items: center;
+  justify-content: center;
+  width: 45%; 
+}
+
+.home-info{
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  width: 50%;
+}
+
+.text{
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  flex-direction: column;
+  height: 60%;
+  width: 100%;
+  font-weight: bold;
+}
+
+.myName, .home-typing{
+  color: green;
+  height: 10%;
+  font-size: 2.5rem;
+  font-family: "Fjalla One", sans-serif;
+}
+
+.home-name{
+  font-size: 2.5rem;
+}
+
+.home-desc{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50%;
+  line-height: 3rem;
+  text-align: justify;
+  text-indent: 1rem;
+  font-size: 1.5rem;
+
+}
+
+.home-btn{
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  row-gap: 1rem;
+  flex-direction: column;
+  height: 15%;
+  font-weight: bold;
+}
+
+.my-img{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 75%;
+  height: 75%;
+  border-radius: 1rem;
+  border-top: 1.5rem solid black;
+  border-bottom: 2rem solid black;
+  border-left: 0.2rem solid black;
+  border-right: 0.2rem solid black;
+  transition: all 0.3s ease;
+}
+
+.about-btn{
+  background-color: rgb(65, 235, 31);
+  padding: 0.5rem 1rem;
+  border-radius: 3rem;
+}

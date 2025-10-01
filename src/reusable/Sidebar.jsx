@@ -49,43 +49,70 @@ const [settings, setSettings] = useState(false);
         className="logo"
       />
       <div className="navs-wrapper">
-        <ul className="navs">
-          <li className="nav">
-            <img src={homeNav} alt="Home" height={40} />
-            {!isCollapse && <Link to="/" className={`${theme === 'dark'? 'lightText':' '}`}>Home</Link>}
-            <span className="hovers"></span>
-          </li>
-          <li className="nav">
-            <img src={aboutNav} alt="About" height={35} />
-            {!isCollapse && <Link to="/about" className={`${theme === 'dark'? 'lightText':' '}`}>About Me</Link>}
-            <span className="hovers"></span>
-          </li>
-          <li className="nav">
-            <img src={skillsNav} alt="Skills" height={40} />
-            {!isCollapse && <Link to="/skills" className={`${theme === 'dark'? 'lightText':' '}`}>Skills</Link>}
-            <span className="hovers"></span>
-          </li>
-          <li className="nav">
-            <img src={projectsNav} alt="Projects" height={35} />
-            {!isCollapse && <Link to="/projects" className={`${theme === 'dark'? 'lightText':' '}`}>Projects</Link>}
-            <span className="hovers"></span>
-          </li>
-          <li className="nav">
-            <img src={contactNav} alt="Contact" height={35} />
-            {!isCollapse && <Link to="/contact" className={`${theme === 'dark'? 'lightText':' '}`}>Contact</Link>}
-            <span className="hovers"></span>
-          </li>
-          <li className="nav settings">
-            <img src={settingsNav} alt="Settings" height={40} />
-            {!isCollapse && <p  onClick={showtheme} className={`${theme === 'dark'? 'lightText':' '}`}>Settings</p>}
-            <span className="hovers"></span>
+     <ul className="navs">
+  <li>
+    <Link to="/" className={`nav ${theme === 'dark' ? 'lightText' : ''}`}>
+      <img src={homeNav} alt="Home" height={40} />
+      {!isCollapse && <span>Home</span>}
+    </Link>
+    <span className="hovers"></span>
+  </li>
+  
+  <li>
+    <Link to="/about" className={`nav ${theme === 'dark' ? 'lightText' : ''}`}>
+      <img src={aboutNav} alt="About" height={35} />
+      {!isCollapse && <span>About Me</span>}
+    </Link>
+    <span className="hovers"></span>
+  </li>
 
-              <div className={`settings-wrapper ${settings ? "show" : ""} ${isCollapse? 'collapseSettings':''}`}>
-              <button onClick={changeTheme} className='theme-btn' style={{backgroundColor: theme === 'dark'? 'black':'white', color: theme === 'dark'? 'white':'black'}} ><img src={theme === 'light' ? darkModeIcon : lightModeIcon} alt="Toggle Theme" height={30}  />Theme</button>
-            </div>
+  <li>
+    <Link to="/skills" className={`nav ${theme === 'dark' ? 'lightText' : ''}`}>
+      <img src={skillsNav} alt="Skills" height={40} />
+      {!isCollapse && <span>Skills</span>}
+    </Link>
+    <span className="hovers"></span>
+  </li>
 
-          </li>
-        </ul>
+  <li>
+    <Link to="/projects" className={`nav ${theme === 'dark' ? 'lightText' : ''}`}>
+      <img src={projectsNav} alt="Projects" height={35} />
+      {!isCollapse && <span>Projects</span>}
+    </Link>
+    <span className="hovers"></span>
+  </li>
+
+  <li>
+    <Link to="/contact" className={`nav ${theme === 'dark' ? 'lightText' : ''}`}>
+      <img src={contactNav} alt="Contact" height={35} />
+      {!isCollapse && <span>Contact</span>}
+    </Link>
+    <span className="hovers"></span>
+  </li>
+
+  <li className="settings">
+    <div onClick={showtheme} className={`nav ${theme === 'dark' ? 'lightText' : ''}`}>
+      <img src={settingsNav} alt="Settings" height={40} />
+      {!isCollapse && <span>Settings</span>}
+    </div>
+    <span className="hovers"></span>
+    
+    <div className={`settings-wrapper ${settings ? "show" : ""} ${isCollapse ? 'collapseSettings' : ''}`}>
+      <button
+        onClick={changeTheme}
+        className='theme-btn'
+        style={{
+          backgroundColor: theme === 'dark' ? 'black' : 'white',
+          color: theme === 'dark' ? 'white' : 'black'
+        }}
+      >
+        <img src={theme === 'light' ? darkModeIcon : lightModeIcon} alt="Toggle Theme" height={30} />
+        Theme
+      </button>
+    </div>
+  </li>
+</ul>
+
       </div>
     </aside>
   );
