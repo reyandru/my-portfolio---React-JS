@@ -13,3 +13,17 @@
   flex-direction: column;
   height: 100vh;
 }
+
+.section-head{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-inline: 1rem;
+  height: 20%;
+}
+
+.contact-wrapper{
+  height: 80%;
+  width: 100%;
+}

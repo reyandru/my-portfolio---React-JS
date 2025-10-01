@@ -1,4 +1,4 @@
-.container{
+.skills-container{
   height: 100vh;
   display: flex;
   align-items: center;
@@ -6,10 +6,159 @@
   flex-direction: column;
 }
 
-.collapses{
+.skills-collapses{
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-direction: column;
   height: 100vh;
 }
+
+.section-head{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-inline: 1rem;
+  height: 20%;
+}
+
+.skills-wrapper{
+  height: 80%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.skills{ 
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  border: 0.3rem solid black;
+  width: 30%;
+  height: 70%;
+  padding: 1rem;
+  border-radius: 2rem;
+}
+
+.skill2{
+  background-color: red;
+} 
+
+.skill3{
+  background-color: rgba(10, 113, 247, 0.874);
+}
+
+.skill1{
+  background-color: greenyellow;
+}
+
+.skill-ttl{
+  text-align: center;
+  color: orange;
+}
+.skill-desc{
+  text-align: justify;
+  text-indent: 3rem;
+  line-height: 1.5rem;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.see-more{
+  background-color: rgb(65, 235, 31);
+  padding: 0.5rem 1rem;
+  border-radius: 3rem;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.programming{
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  height: 55%;
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid black;
+}
+.other-tools{
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  height: 40%;
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid black;
+}
+
+.programming{
+  font-size: 1.5rem;
+  flex-direction: column;
+}
+
+.prog-tools{
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  font-size: 1.3rem;
+
+} 
+
+.design-tools{
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 100%;
+  height: 40%;
+  font-size: 1.3rem;
+}
+
+.skill {
+  justify-content: space-between;
+  align-items: center;
+  width: 70%;
+  display: flex;
+  column-gap: 10px;
+  margin-bottom: 20px;
+}
+
+.prog-ttl{
+  font-size: 2rem;
+}
+.programmings{
+  width: 20%;
+  font-size: 1.2rem;
+}
+.meter-container {
+  background-color: #ddd;
+  height: 2rem;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  max-width: 100rem;
+  margin-top: 5px;
+}
+
+.meter-fill {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: 1rem;
+  color: white;
+  height: 100%;
+  padding-inline: 0.5rem;
+  background-color: #4caf50;
+  width: 0;
+  transition: width 1s ease-in-out;
+  border-radius: 10px;
+}
+
