@@ -24,6 +24,29 @@
 }
 
 .project-wrapper{
+  border: 0.3rem solid black;
   height: 80%;
   width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 5rem);
+  overflow-y: auto;
+  gap: 3rem 1rem;
+  padding: 1rem;
+  grid-template-columns: repeat(3, 32.4%);
+}
+
+.project{
+  border: 0.1rem solid black;
+  height: 18rem;
+  width: 100%;
+}
+
+.proj-img{
+  height: 100%;
+  width: 100%;
+}
+
+.proj-name{
+  font-size: 1.2rem;
+
 }

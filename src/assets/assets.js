@@ -7,7 +7,7 @@ import darkModeIcon from './darkmode.png';
 import ecomProj from './ecom.png';
 import emailIcon from './email.png';
 import fbIcon from './fb.png';
-import fe3 from './FE3.png';
+import fe3Proj from './FE3.png';
 import formalMe from './formalMe.png';
 import fourCardProj from './fourcard.png';
 import githubIcon from './github.png';
@@ -30,34 +30,37 @@ import troubleShootIcon from './troubleshoot.png';
 import resume from './Bariata, Rei Andrew C._Portfolio.docx';
 
 export {
-  onebyone,
-  aboutNav,
-  blogProj,
   codeIcon,
-  contactNav,
   darkModeIcon,
-  ecomProj,
   emailIcon,
   fbIcon,
-  fe3,
-  formalMe,
-  fourCardProj,
   githubIcon,
-  homeNav,
   instagIcon,
-  landingProj,
   lightModeIcon,
-  logo,
-  orderProj,
   osInstallIcon,
-  perfumeProj,
   phoneNumberIcon,
+  troubleShootIcon,
+
+  aboutNav,
+  contactNav,
+  homeNav,
   projectsNav,
-  recipeProj,
-  rpsProj,
   settingsNav,
   skillsNav,
-  togaMe,
-  troubleShootIcon,
-  resume
+
+  blogProj,
+  ecomProj,
+  fourCardProj,
+  landingProj,
+  orderProj,
+  perfumeProj,
+  recipeProj,
+  rpsProj,
+  fe3Proj,
+
+  formalMe,
+  logo,
+  onebyone,
+  resume,
+  togaMe
 };
