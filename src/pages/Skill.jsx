@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import Sidebar from '../reusable/Sidebar';
 import '../css/hasSideBar.css';
 import '../css/skills.css';
@@ -6,14 +6,22 @@ import { codeIcon, osInstallIcon, troubleShootIcon } from '../assets/assets';
 
 function Skill() {
   const [isCollapse, setIsCollapse] = useState(false);
+  const [theme, setTheme] = useState(() => {
+    const savedTheme = localStorage.getItem('theme');
+    return savedTheme === 'dark' ? 'dark' : 'light';
+  });
 
+  useEffect(() => {
+    document.body.className = theme;
+    localStorage.setItem('theme', theme);
+  }, [theme]);
   return (
     <>
       <Sidebar isCollapse={isCollapse} setIsCollapse={setIsCollapse} />
 
       <section className={`${isCollapse ? 'skills-collapses' : 'skills-container'}`}>
         <div className="section-head">
-          <h1 className="title">Skills</h1>
+          <h1 className="title"  style={{borderColor: theme === 'dark'? 'white':'black'}}>Skills</h1>
         </div>
 
         <div className="skills-wrapper">
@@ -44,7 +52,7 @@ function Skill() {
       </section>
 
       <section className={`${isCollapse ? 'skills-collapses' : 'skills-container'}`}>
-        <div className="programming">
+        <div className="programming"  style={{borderColor: theme === 'dark'? 'white':'black'}}>
           <h1 className="prog-ttl">Programming languages</h1>
 
           <div className="skill">
@@ -64,7 +72,7 @@ function Skill() {
           <div className="skill">
             <p className="programmings">JavaScript</p>
             <div className="meter-container">
-              <div className="meter-fill" style={{ width: '85%' }}>85%</div>
+              <div className="meter-fill" style={{ width: '85%', backgroundColor: 'yellowGreen' }}>85%</div>
             </div>
           </div>
 
@@ -73,26 +81,26 @@ function Skill() {
           <div className="skill">
             <p className="programmings">React JS</p>
             <div className="meter-container">
-              <div className="meter-fill" style={{ width: '75%' }}>75%</div>
+              <div className="meter-fill" style={{ width: '75%', backgroundColor: 'orange' }}>75%</div>
             </div>
           </div>
 
           <div className="skill">
             <p className="programmings">Node JS</p>
             <div className="meter-container">
-              <div className="meter-fill" style={{ width: '40%' }}>40%</div>
+              <div className="meter-fill" style={{ width: '40%', backgroundColor: 'red' }}>40%</div>
             </div>
           </div>
 
           <div className="skill">
             <p className="programmings">Tailwind CSS</p>
             <div className="meter-container">
-              <div className="meter-fill" style={{ width: '75%' }}>75%</div>
+              <div className="meter-fill" style={{ width: '75%', backgroundColor: 'orange'}}>75%</div>
             </div>
           </div>
         </div>
 
-        <div className="other-tools">
+        <div className="other-tools"  style={{borderColor: theme === 'dark'? 'white':'black'}}>
           <div className="prog-tools">
             <h1 className="prog-ttl">Databases & Tools:</h1>
             <p>MySQL Workbench</p>

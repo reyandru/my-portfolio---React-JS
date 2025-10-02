@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import Sidebar from '../reusable/Sidebar';
 import '../css/hasSideBar.css';
 import '../css/project.css'
@@ -63,20 +63,28 @@ function Project() {
      
   ]
   const [isCollapse, setIsCollapse] = useState(false);
+  const [theme, setTheme] = useState(() => {
+    const savedTheme = localStorage.getItem('theme');
+    return savedTheme === 'dark' ? 'dark' : 'light';
+  });
 
+  useEffect(() => {
+    document.body.className = theme;
+    localStorage.setItem('theme', theme);
+  }, [theme]);
 
   return (
     <>
       <Sidebar isCollapse={isCollapse} setIsCollapse={setIsCollapse} />
       <section className={`${isCollapse ? 'project-collapses' : 'project-container'}`}>
         <div className="section-head">
-          <h1 className='title'>Projects</h1>
+          <h1 className='title' style={{borderColor: theme === 'dark'? 'white':'black'}}>Projects</h1>
         </div>
         <div className='project-wrapper'>
           {projects.map((project,index) => (
             <a href={project.link} className="project" key={index}>
               <img src={project.img} alt={project.name} className='proj-img' />
-              <span className='proj-name'>{project.name}</span>
+              <span className='proj-name' style={{color: theme === 'dark' ? 'white':'dark'}}>{project.name}</span>
             </a>
           ))}
         </div>

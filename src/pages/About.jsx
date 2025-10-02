@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Sidebar from '../reusable/Sidebar';
 import '../css/hasSideBar.css';
 import '../css/about.css';
@@ -6,13 +6,22 @@ import { onebyone, resume } from '../assets/assets';
 
 function About() {
   const [isCollapse, setIsCollapse] = useState(false);
+  const [theme, setTheme] = useState(() => {
+    const savedTheme = localStorage.getItem('theme');
+    return savedTheme === 'dark' ? 'dark' : 'light';
+  });
+
+  useEffect(() => {
+    document.body.className = theme;
+    localStorage.setItem('theme', theme);
+  }, [theme]);
 
   return (
     <>
       <Sidebar isCollapse={isCollapse} setIsCollapse={setIsCollapse} />
       <section className={`${isCollapse ? 'about-collapses' : 'about-container'}`}>
         <div className="section-head">
-          <h1 className='title'>About</h1>
+          <h1 className='title'  style={{borderColor: theme === 'dark'? 'white':'black'}}>About</h1>
           <img src={onebyone} alt="" className='myImg' height={150} />
         </div>
         <div className="about-wrapper">

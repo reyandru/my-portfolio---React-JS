@@ -57,7 +57,9 @@
   border: 0.5rem solid black;
 }
 
+
 .contact-name{
+  color: orange;
   font-size: 2rem;
 }
 
