@@ -21,11 +21,7 @@ function Home() {
   const [typing, setTyping] = useState('');
   const [index, setIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
-
-  const [theme, setTheme] = useState(() => {
-    const savedTheme = localStorage.getItem('theme');
-    return savedTheme === 'dark' ? 'dark' : 'light';
-  });
+  const [theme, setTheme] = useState(() => localStorage.getItem('theme') === 'dark' ? 'dark' : 'light');
 
   useEffect(() => {
     document.body.className = theme;
@@ -49,7 +45,7 @@ function Home() {
         setIsDeleting(true);
       } else if (isEmpty) {
         setIsDeleting(false);
-        setIndex((prev) => (prev + 1) % text.length);
+        setIndex(prev => (prev + 1) % text.length);
       } else {
         const updated = isDeleting
           ? currentText.substring(0, typing.length - 1)
@@ -69,22 +65,19 @@ function Home() {
           <div className="text">
             <div className="home-name" style={{ color: theme === 'dark' ? 'white' : 'black' }}>
               Hi I'm <span className="myName" style={{ color: theme === 'dark' ? 'orange' : 'green' }}>Rei Andrew C. Bairata</span>
-              
             </div>
             <div className="home-desc">
-              Welcome to my portfolio website! Explore more about me and check
-              out the projects I’ve made. You can also contact me using the
-              details on the Contact page. Enjoy!
+              Welcome to my portfolio website! Explore more about me and check out the projects I’ve made. You can also contact me using the details on the Contact page. Enjoy!
             </div>
             <div className="home-typing" style={{ color: theme === 'dark' ? 'orange' : 'green' }}>{typing}</div>
           </div>
           <div className="home-btn">
             <span>Click here to learn more about me:</span>
-            <Link to={'/about'} className="about-btn">About me</Link>
+            <Link to="/about" className="about-btn">About me</Link>
           </div>
         </div>
         <div className="home-img">
-          <div className="my-img" style={{borderColor : theme === 'dark' ? 'rgb(65, 235, 31)':'black'}}>
+          <div className="my-img" style={{ borderColor: theme === 'dark' ? 'rgb(65, 235, 31)' : 'black' }}>
             {images.map((img, idx) => (
               <img
                 src={img}

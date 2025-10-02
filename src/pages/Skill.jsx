@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import Sidebar from '../reusable/Sidebar';
 import '../css/hasSideBar.css';
 import '../css/skills.css';
@@ -15,18 +15,19 @@ function Skill() {
     document.body.className = theme;
     localStorage.setItem('theme', theme);
   }, [theme]);
+
   return (
     <>
       <Sidebar isCollapse={isCollapse} setIsCollapse={setIsCollapse} />
 
       <section className={`${isCollapse ? 'skills-collapses' : 'skills-container'}`}>
         <div className="section-head">
-          <h1 className="title"  style={{borderColor: theme === 'dark'? 'white':'black'}}>Skills</h1>
+          <h1 className="title" style={{ borderColor: theme === 'dark' ? 'white' : 'black' }}>Skills</h1>
         </div>
 
         <div className="skills-wrapper">
           <div className="skill1 skills">
-            <img src={codeIcon} height="80" alt="" />
+            <img src={codeIcon} height={80} alt="" />
             <h1 className="skill-ttl">Web Developer</h1>
             <p className="skill-desc">
               I am a Front-End Developer. I enjoy creating user interfaces that enhance the websites I work on. I use vanilla JavaScript along with HTML and CSS, and I have also worked with the React.js framework. I have completed many front-end projects, which you can find on my GitHub.
@@ -34,7 +35,7 @@ function Skill() {
           </div>
 
           <div className="skill2 skills">
-            <img src={troubleShootIcon} height="80" alt="" />
+            <img src={troubleShootIcon} height={80} alt="" />
             <h1 className="skill-ttl">PC/Laptop Troubleshoot</h1>
             <p className="skill-desc">
               I also repair PC/Laptop software. Simple knowledge about the components and how to clean its contents, inner and outer the software.
@@ -42,17 +43,17 @@ function Skill() {
           </div>
 
           <div className="skill3 skills">
-            <img src={osInstallIcon} height="80" alt="" />
+            <img src={osInstallIcon} height={80} alt="" />
             <h1 className="skill-ttl">OS Installation</h1>
             <p className="skill-desc">
-              I also installed OS on PCs/laptops. I have a bootable USB containing windows 10 and 11.
+              I also installed OS on PCs/laptops. I have a bootable USB containing Windows 10 and 11.
             </p>
           </div>
         </div>
       </section>
 
       <section className={`${isCollapse ? 'skills-collapses' : 'skills-container'}`}>
-        <div className="programming"  style={{borderColor: theme === 'dark'? 'white':'black'}}>
+        <div className="programming" style={{ borderColor: theme === 'dark' ? 'white' : 'black' }}>
           <h1 className="prog-ttl">Programming languages</h1>
 
           <div className="skill">
@@ -95,12 +96,12 @@ function Skill() {
           <div className="skill">
             <p className="programmings">Tailwind CSS</p>
             <div className="meter-container">
-              <div className="meter-fill" style={{ width: '75%', backgroundColor: 'orange'}}>75%</div>
+              <div className="meter-fill" style={{ width: '75%', backgroundColor: 'orange' }}>75%</div>
             </div>
           </div>
         </div>
 
-        <div className="other-tools"  style={{borderColor: theme === 'dark'? 'white':'black'}}>
+        <div className="other-tools" style={{ borderColor: theme === 'dark' ? 'white' : 'black' }}>
           <div className="prog-tools">
             <h1 className="prog-ttl">Databases & Tools:</h1>
             <p>MySQL Workbench</p>
@@ -112,7 +113,7 @@ function Skill() {
           </div>
 
           <div className="design-tools">
-            <h1 className='prog-ttl'>Web Designing:</h1>
+            <h1 className="prog-ttl">Web Designing:</h1>
             <p>Figma</p>
             <p>Canva</p>
           </div>
