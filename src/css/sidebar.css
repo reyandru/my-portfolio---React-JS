@@ -21,8 +21,6 @@ aside.collapse{
   transition: all 0.3s ease;
 }
 
-
-
 .navs-wrapper{
   height: 75%;
   width: 100%;
@@ -100,6 +98,7 @@ li:hover .hovers {
   transition: all 0.3s ease;
 }
 
+
 .collapseSettings{
  top: 0;
  left: 3.8rem;
@@ -108,7 +107,7 @@ li:hover .hovers {
 }
 
 .show{
-   height: 4rem;
+  height: 4rem;
   padding: 1rem;
   z-index: 99;
 }
