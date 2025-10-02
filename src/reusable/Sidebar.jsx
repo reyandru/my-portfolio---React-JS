@@ -27,7 +27,7 @@ const [settings, setSettings] = useState(false);
     localStorage.setItem('theme', theme);
   }, [theme]);
 
-    const changeTheme = () => {
+  const changeTheme = () => {
     setTheme(prev => (prev === 'light' ? 'dark' : 'light'));
   };
 

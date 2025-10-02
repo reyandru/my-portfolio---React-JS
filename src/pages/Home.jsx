@@ -20,45 +20,46 @@ function Home() {
   const [current, setCurrent] = useState(0);
   const [typing, setTyping] = useState('');
   const [index, setIndex] = useState(0);
-  const [charSet, setCharSet] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
+
   const [theme, setTheme] = useState(() => {
-    const saveTheme = localStorage.getItem('theme');
-    return saveTheme === 'dark' ? 'dark':'light';
+    const savedTheme = localStorage.getItem('theme');
+    return savedTheme === 'dark' ? 'dark' : 'light';
   });
 
-   useEffect(() => {
-      document.body.className = theme;
-      localStorage.setItem('theme', theme);
-    }, [theme]);
-  
+  useEffect(() => {
+    document.body.className = theme;
+    localStorage.setItem('theme', theme);
+  }, [theme]);
+
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrent((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+      setCurrent(prev => (prev + 1) % images.length);
     }, 2000);
     return () => clearInterval(interval);
-  }, [images.length]);
+  }, []);
 
   useEffect(() => {
-    const handleTyping = () => {
-      const currentText = text[index];
-      let updatedCharSet = isDeleting ? charSet - 1 : charSet + 1;
-      let updatedTyping = currentText.substring(0, updatedCharSet);
+    const currentText = text[index];
+    const isComplete = !isDeleting && typing === currentText;
+    const isEmpty = isDeleting && typing === '';
 
-      setTyping(updatedTyping);
-      setCharSet(updatedCharSet);
-
-      if (!isDeleting && updatedCharSet === currentText.length) {
-        setTimeout(() => setIsDeleting(true), 2000);
-      } else if (isDeleting && updatedCharSet === 0) {
+    const timeout = setTimeout(() => {
+      if (isComplete) {
+        setIsDeleting(true);
+      } else if (isEmpty) {
         setIsDeleting(false);
-        setIndex((prevIndex) => (prevIndex + 1) % text.length);
+        setIndex((prev) => (prev + 1) % text.length);
+      } else {
+        const updated = isDeleting
+          ? currentText.substring(0, typing.length - 1)
+          : currentText.substring(0, typing.length + 1);
+        setTyping(updated);
       }
-    };
+    }, isDeleting ? 100 : 150);
 
-    const timeout = setTimeout(handleTyping, isDeleting ? 100 : 150);
     return () => clearTimeout(timeout);
-  }, [charSet, isDeleting, index, text]);
+  }, [typing, isDeleting, index, text]);
 
   return (
     <>
@@ -66,23 +67,24 @@ function Home() {
       <section className={`${isCollapse ? 'collapses' : 'container'}`}>
         <div className="home-info">
           <div className="text">
-            <div className="home-name">
-              Hi I'am <span className="myName">Rei Andrew C. Bairata</span>
+            <div className="home-name" style={{ color: theme === 'dark' ? 'white' : 'black' }}>
+              Hi I'm <span className="myName" style={{ color: theme === 'dark' ? 'orange' : 'green' }}>Rei Andrew C. Bairata</span>
+              
             </div>
             <div className="home-desc">
               Welcome to my portfolio website! Explore more about me and check
               out the projects I’ve made. You can also contact me using the
               details on the Contact page. Enjoy!
             </div>
-            <div className="home-typing">{typing}</div>
+            <div className="home-typing" style={{ color: theme === 'dark' ? 'orange' : 'green' }}>{typing}</div>
           </div>
           <div className="home-btn">
             <span>Click here to learn more about me:</span>
-            <Link to={'/about'} className='about-btn'>About me</Link>
+            <Link to={'/about'} className="about-btn">About me</Link>
           </div>
         </div>
         <div className="home-img">
-          <div className="my-img">
+          <div className="my-img" style={{borderColor : theme === 'dark' ? 'rgb(65, 235, 31)':'black'}}>
             {images.map((img, idx) => (
               <img
                 src={img}

@@ -14,16 +14,6 @@
   height: 100vh;
 }
 
-
-.section-head{
-  width: 100%;
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  padding-inline: 1rem;
-  height: 20%;
-}
-
 .myImg{
   border: 2px solid black;
 }

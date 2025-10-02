@@ -1,8 +1,9 @@
 .container, .about-container,.skills-container, .contact-container, .project-container{
   padding: 1rem;
-  width: 82.2%;
+  width: 82%;
   margin-left: 17.1rem;
   transition: all 0.3s ease;
+  border: 1px solid black;
 }
 
 .collapses, .about-collapses ,.skills-collapses, .contact-collapses, .project-collapses{
@@ -14,7 +15,11 @@
 
 .section-head{
   width: 100%;
-  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: 1rem;
+  height: 20%;
 }
 
 .title{
