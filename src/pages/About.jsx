@@ -17,7 +17,10 @@ function About() {
   const day = 19;
   const textRef = useRef(null);
   const picture = useRef(null);
-  const row1 = useRef(null);
+  const info = useRef(null);
+  const leftCol = useRef(null);
+  const rightCol = useRef(null);
+  const description = useRef(null);
   const button = useRef(null);
 
   function computeAge(){
@@ -41,17 +44,18 @@ function About() {
   }, [theme]);
 
 
-  useEffect(() => {
-  gsap.set(textRef.current, {opacity: 0 , x: -200, autoAlpha: 0});
-  gsap.set(picture.current, {opacity: 0});
-  gsap.set(row1.current, {y: 50, opacity: 0});
-  gsap.set(button.current, {opacity: 0});
-
-
+useEffect(() => {
+  gsap.set(textRef.current, { opacity: 0, x: -200, autoAlpha: 0 });
+  gsap.set(picture.current, { opacity: 0, scale: 0.8, rotateY: -30 });
+  gsap.set(info.current, { opacity: 0 });
+  gsap.set(leftCol.current, { x: -50, opacity: 0 });
+  gsap.set(rightCol.current, { x: 50, opacity: 0 });
+  gsap.set(description.current, { y: 30, opacity: 0 });
+  gsap.set(button.current, { opacity: 0 });
 
   const tl = gsap.timeline();
 
-    tl.to(textRef.current, {
+  tl.to(textRef.current, {
     x: 0,
     opacity: 1,
     autoAlpha: 1,
@@ -59,29 +63,50 @@ function About() {
     ease: 'power3.out',
   });
 
-   tl.to(picture.current,{
+  tl.to(picture.current, {
     opacity: 1,
-    autoAlpha: 1,
-    duration: 0.5,
+    scale: 1,
+    rotateY: 0,
+    duration: 1,
+    ease: 'bounce.out',
+    transformOrigin: 'center center',
+  });
+
+  tl.to(info.current, {
+    opacity: 1,
+    duration: 0.2,
+  });
+
+  tl.to(leftCol.current, {
+    x: 0,
+    opacity: 1,
+    duration: 0.6,
+    ease: 'power2.out',
+  }, "-=0.4");
+
+  tl.to(rightCol.current, {
+    x: 0,
+    opacity: 1,
+    duration: 0.6,
+    ease: 'power2.out',
+  }, "-=0.5");
+
+  tl.to(description.current, {
+    y: 0,
+    opacity: 1,
+    duration: 0.8,
     ease: 'power3.out',
   });
 
-   tl.to(row1.current, {
-      opacity: 1,
-      y:0,
-      autoAlpha: 1,
-      duration: 0.6,
-      ease: 'power3.out',
-    });
-
-
-    tl.to(button.current,{
+  tl.to(button.current, {
     opacity: 1,
     autoAlpha: 1,
     duration: 0.3,
     ease: 'power3.out',
   });
 }, []);
+
+
 
  
   return (
@@ -94,21 +119,21 @@ function About() {
         </div>
         <div className="about-wrapper">
           <div className="about-text">
-            <div className="about-info" ref={row1}>
+            <div className="about-info" ref={info}>
               <div className="about-column">
-                <div className="left">
+                <div className="left" ref={leftCol}>
                   <p className="abt-name" >Name: Rei Andrew C. Bariata</p>
                   <p className="address">Address: P1 Brgy. Abulalas Hagonoy, Bulacan</p>
                   <p className="college">College: Bulacan State University (Hagonoy Campus)</p>
                 </div>
-                <div className="right">
+                <div className="right" ref={rightCol}>
                   <p className="birthDay">Birthdate: August 19, <span id="year">{year}</span></p>
                   <p className="age">Age: <span id="ageNow">{age}</span></p>
                   <p className="course">Course: BSIT</p>
                   <p className="major">Major: Web and App Development</p>
                 </div>
               </div>
-              <div className="descriptions">
+              <div className="descriptions" ref={description}>
                 <p className="exp">
                   Experience: OJT Front End Developer in Planning and Development Office in Bulacan State University - Main campus
                 </p>
