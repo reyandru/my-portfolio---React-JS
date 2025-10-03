@@ -1,4 +1,5 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import gsap from 'gsap';
 import Sidebar from '../reusable/Sidebar';
 import { Link } from 'react-router-dom';
 import '../css/home.css';
@@ -21,7 +22,12 @@ function Home() {
   const [typing, setTyping] = useState('');
   const [index, setIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
-  const [theme, setTheme] = useState(() => localStorage.getItem('theme') === 'dark' ? 'dark' : 'light');
+  const [theme, setTheme] = useState(() =>
+    localStorage.getItem('theme') === 'dark' ? 'dark' : 'light'
+  );
+
+  const textRef = useRef(null);
+  const imageRef = useRef(null);
 
   useEffect(() => {
     document.body.className = theme;
@@ -57,11 +63,33 @@ function Home() {
     return () => clearTimeout(timeout);
   }, [typing, isDeleting, index, text]);
 
+useEffect(() => {
+  gsap.set(textRef.current, { x: -300, autoAlpha: 0 });
+  gsap.set(imageRef.current, { x: 300, autoAlpha: 0 });
+
+  const tl = gsap.timeline();
+
+  tl.to(textRef.current, {
+    x: 0,
+    autoAlpha: 1,
+    duration: 1.2,
+    ease: 'power3.out',
+  });
+
+  tl.to(imageRef.current, {
+    x: 0,
+    autoAlpha: 1,
+    duration: 1.2,
+    ease: 'power3.out',
+  }, "-=0.8");
+}, []);
+
+
   return (
     <>
       <Sidebar isCollapse={isCollapse} setIsCollapse={setIsCollapse} />
       <section className={`${isCollapse ? 'collapses' : 'container'}`}>
-        <div className="home-info">
+        <div className="home-info" ref={textRef}>
           <div className="text">
             <div className="home-name" style={{ color: theme === 'dark' ? 'white' : 'black' }}>
               Hi I'm <span className="myName" style={{ color: theme === 'dark' ? 'orange' : 'green' }}>Rei Andrew C. Bairata</span>
@@ -76,7 +104,7 @@ function Home() {
             <Link to="/about" className="about-btn">About me</Link>
           </div>
         </div>
-        <div className="home-img">
+        <div className="home-img" ref={imageRef}>
           <div className="my-img" style={{ borderColor: theme === 'dark' ? 'rgb(65, 235, 31)' : 'black' }}>
             {images.map((img, idx) => (
               <img
