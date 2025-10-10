@@ -44,4 +44,33 @@
   margin-left: 0;
 }
 
+.section-head{
+  height: 15%;
+  padding-inline: 0.5rem;
+}
+
+.title{
+  font-size: 2rem;
+  padding: 0.5rem;
+  width: 40%;
+  border: 0.3rem solid black;
+}
+}
+
+@media screen and (max-width: 376px) {
+ .title{
+  font-size: 1.7rem;
+  padding: 0.5rem;
+  width: 40%;
+  border: 0.3rem solid black;
+}
+}
+
+@media screen and (max-width: 325px) {
+.title{
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  width: 40%;
+  border: 0.3rem solid black;
+}
 }
