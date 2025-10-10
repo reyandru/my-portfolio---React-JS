@@ -91,7 +91,7 @@ useEffect(() => {
       <section className={`${isCollapse ? 'collapses' : 'container'}`}>
         <div className="home-info" ref={textRef}>
           <div className="text">
-            <div className="home-name" style={{ color: theme === 'dark' ? 'white' : 'black' }}>
+            <div className="home-name">
               Hi I'm <span className="myName" style={{ color: theme === 'dark' ? 'orange' : 'green' }}>Rei Andrew C. Bairata</span>
             </div>
             <div className="home-desc">
