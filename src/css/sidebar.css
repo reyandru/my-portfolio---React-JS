@@ -134,7 +134,7 @@ li:hover .hovers {
   transition: all 0.3s ease;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 426px) {
   .container{
     flex-direction: column;
   }

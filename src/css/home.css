@@ -95,7 +95,7 @@
   border-radius: 3rem;
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 426px){
   .container{
     overflow: auto;
   }

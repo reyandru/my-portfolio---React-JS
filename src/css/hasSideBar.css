@@ -31,7 +31,7 @@
 }
 
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 426px) {
 .container, .about-container,.skills-container, .contact-container, .project-container{
     padding: 0.5rem;
     width: 100%;
