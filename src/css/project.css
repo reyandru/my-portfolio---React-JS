@@ -41,3 +41,28 @@
   font-size: 1.2rem;
 
 }
+
+@media screen and (max-width: 426px){
+  .project{
+    height: 100%;
+  }
+
+  .proj-name{
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (max-width: 376px) {
+ 
+}
+
+@media screen and (max-width: 325px) {
+.project-wrapper{
+  gap: 0.3rem;
+  padding: 0.5rem;
+}
+
+  .project{
+    height: 70%;
+  }
+}

@@ -89,13 +89,18 @@
 
 
 @media screen and (max-width: 426px){
+
+  .about-container{
+  height: 90vh;
+  }
+  
  .myImg{
   height: 100px;
  }
 
  .left, .right, .descriptions{
   font-size: 1rem ;
-  height: 75%;
+  height: 80%;
  }
 
  .downloadResume{
@@ -105,10 +110,10 @@
 
 }
 
-@media screen and (max-width: 376px) {
- 
-}
 
 @media screen and (max-width: 325px) {
+ .myImg{
+  height: 80px;
+ }
 
 }
