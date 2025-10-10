@@ -29,3 +29,19 @@
   border-radius: 25px;
   text-align: center;
 }
+
+
+@media screen and (max-width: 768px) {
+.container, .about-container,.skills-container, .contact-container, .project-container{
+    padding: 0.5rem;
+    width: 100%;
+    margin-left: 0;
+}
+
+.collapses, .about-collapses ,.skills-collapses, .contact-collapses, .project-collapses{
+  padding: 0.5rem;
+  width: 100%;
+  margin-left: 0;
+}
+
+}

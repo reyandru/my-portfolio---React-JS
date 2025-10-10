@@ -134,3 +134,79 @@ li:hover .hovers {
   transition: all 0.3s ease;
 }
 
+@media screen and (max-width: 768px) {
+  .container{
+    flex-direction: column;
+  }
+
+  aside{
+    width: 100%;
+    height: 5rem;
+    flex-direction: row;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-around;
+    background-color: black;
+    position: sticky;
+  }
+  .navs-wrapper{
+    width: 80%;
+  }
+  aside.collapse{
+  width: 100%;
+  }
+
+
+  .navs{
+    flex-direction: row;
+    width: 100%;
+  }
+
+  .navs > li{
+    width: 15%;
+  }
+
+  .nav{
+    width: 100%;
+    row-gap: 0.3rem;
+    flex-direction: column;
+  }
+
+  .nav > img{
+    height: 15px;
+  }
+
+  .nav > span{
+    font-size: 10px;
+  }
+
+
+  .logo{
+    height: 50px;
+  }
+
+  .settings-wrapper{
+    width: 4rem !important;
+    height: 2rem;
+    padding: 0.5rem;
+  }
+
+  .show{
+    top: 0.5rem;
+    left: 0;
+    z-index: 999;
+    width: 10rem;
+  }
+
+  .collapseSettings{
+    display: none;
+  }
+
+  .theme-btn{
+    font-size: 0.5rem;
+  }
+
+  .theme-btn > img{
+      height: 10px;
+  }
+}
