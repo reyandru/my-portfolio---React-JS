@@ -157,7 +157,6 @@
  .skills-wrapper{
    align-items: flex-start;
    flex-wrap: wrap;
-   border: 1px solid black;
  }
 
  .skills{
@@ -204,10 +203,9 @@
  }
 }
 
-@media screen and (max-width: 376px) {
- 
-}
-
 @media screen and (max-width: 325px) {
-
+ .programmings{
+  font-size: 0.8rem;
+  width: 30%;
+ }
 }
