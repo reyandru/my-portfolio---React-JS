@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef, useLayoutEffect } from 'react';
 import Sidebar from '../reusable/Sidebar';
 import '../css/hasSideBar.css';
 import '../css/skills.css';
 import { codeIcon, osInstallIcon, troubleShootIcon } from '../assets/assets';
+import gsap from 'gsap';
 
 function Skill() {
   const [isCollapse, setIsCollapse] = useState(false);
@@ -11,10 +12,36 @@ function Skill() {
     return savedTheme === 'dark' ? 'dark' : 'light';
   });
 
+  const skillRefs = useRef([]);
+  skillRefs.current = [];
+  const addToRefs = (el) => {
+    if (el && !skillRefs.current.includes(el)) {
+      skillRefs.current.push(el);
+    }
+  };
+
+  
+
   useEffect(() => {
     document.body.className = theme;
     localStorage.setItem('theme', theme);
   }, [theme]);
+
+
+useLayoutEffect(() => {
+  const ctx = gsap.context(() => {
+    gsap.from(skillRefs.current, {
+      x: -300,
+      autoAlpha: 0,
+      duration: 1.5,
+      stagger: 0.6,
+      ease: 'power3.out',
+    });
+  });
+
+  return () => ctx.revert(); 
+}, []);
+
 
   return (
     <>
@@ -26,7 +53,7 @@ function Skill() {
         </div>
 
         <div className="skills-wrapper">
-          <div className="skill1 skills">
+          <div className="skill1 skills" ref={addToRefs}>
             <img src={codeIcon} height={80} alt="" />
             <h1 className="skill-ttl">Web Developer</h1>
             <p className="skill-desc">
@@ -34,7 +61,7 @@ function Skill() {
             </p>
           </div>
 
-          <div className="skill2 skills">
+          <div className="skill2 skills" ref={addToRefs}>
             <img src={troubleShootIcon} height={80} alt="" />
             <h1 className="skill-ttl">PC/Laptop Troubleshoot</h1>
             <p className="skill-desc">
@@ -42,7 +69,7 @@ function Skill() {
             </p>
           </div>
 
-          <div className="skill3 skills">
+          <div className="skill3 skills"  ref={addToRefs}>
             <img src={osInstallIcon} height={80} alt="" />
             <h1 className="skill-ttl">OS Installation</h1>
             <p className="skill-desc">

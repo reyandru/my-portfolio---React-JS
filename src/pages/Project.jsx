@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect,  useRef, useLayoutEffect } from 'react';
 import Sidebar from '../reusable/Sidebar';
 import '../css/hasSideBar.css';
 import '../css/project.css';
@@ -13,7 +13,7 @@ import {
   rpsProj,
   fe3Proj
 } from '../assets/assets';
-
+import gsap from 'gsap';
 function Project() {
   const projects = [
     { img: blogProj, name: "Blog website", link: 'https://github.com/reyandru?tab=repositories' },
@@ -33,11 +33,33 @@ function Project() {
     return savedTheme === 'dark' ? 'dark' : 'light';
   });
 
+   const project = useRef([]);
+    project.current = [];
+    const addToProj = (el) => {
+      if (el && !project.current.includes(el)) {
+        project.current.push(el);
+      }
+    };
+
   useEffect(() => {
     document.body.className = theme;
     localStorage.setItem('theme', theme);
   }, [theme]);
 
+
+  useLayoutEffect(() => {
+  const ctx = gsap.context(() => {
+    gsap.from(project.current, {
+      opacity: 0,
+      autoAlpha: 0,
+      duration: 1,
+      stagger: 0.8,
+      ease: 'power3.out',
+    });
+  });
+
+  return () => ctx.revert(); 
+}, []);
   return (
     <>
       <Sidebar isCollapse={isCollapse} setIsCollapse={setIsCollapse} />
@@ -47,7 +69,7 @@ function Project() {
         </div>
         <div className="project-wrapper">
           {projects.map((project, index) => (
-            <a href={project.link} className="project" key={index} target="_blank" rel="noopener noreferrer">
+            <a href={project.link} className="project" key={index} target="_blank" rel="noopener noreferrer" ref={addToProj}>
               <img src={project.img} alt={project.name} className="proj-img" />
               <span className="proj-name" style={{ color: theme === 'dark' ? 'white' : 'black' }}>
                 {project.name}
