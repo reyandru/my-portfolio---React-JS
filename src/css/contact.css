@@ -68,3 +68,93 @@
   text-decoration: none;
   color: white;
 }
+
+@media screen and (max-width: 426px){
+.contact-container{
+  height: 90vh;
+ }
+ .col-1{
+  flex-direction: column;
+  width: 100%;
+  height: 75%;
+ }
+
+ .col-2{
+  height: 25%;
+  width: 100%;
+ }
+
+ .card-col-1{
+  width: 50%;
+  height: 33%;
+  row-gap: 0.5rem;
+  text-align: center;
+ }
+
+ .card-col-1 > img{
+  height: 30px;
+ }
+
+ .contact-name{
+  font-size: 1.5rem;
+ }
+
+ .contact-info{
+  font-size: 0.8rem;
+ }
+ .card-col-2{
+  width: 50%;
+  height: 90%;
+  row-gap: 0.5rem;
+  text-align: center;
+ }
+
+ 
+ .contact-msg, .contact-msg-2{
+  text-align: center;
+ }
+
+}
+
+@media screen and (max-width: 376px) {
+ 
+ .contact-info{
+  font-size: 0.7rem;
+ }
+
+  .contact-msg-2{
+  font-size: 1.2rem;
+ }
+}
+
+@media screen and (max-width: 325px) {
+
+ .card-col-1 > img{
+  height: 30px;
+ }
+
+ .contact-name{
+  font-size: 1rem;
+ }
+
+ .contact-info{
+  font-size: 0.6rem;
+ }
+ .card-col-2{
+  width: 50%;
+  height: 90%;
+  row-gap: 0.5rem;
+ }
+
+ .contact-container{
+  border: none;
+ }
+ 
+ .contact-msg{
+  font-size: 1.5rem;
+ }
+
+ .contact-msg-2{
+  font-size: 1rem;
+ }
+}
