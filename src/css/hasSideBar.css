@@ -30,6 +30,22 @@
 }
 
 
+@media screen and (max-width: 769px) {
+  .container, .about-container,.skills-container, .contact-container, .project-container{
+    padding: 0.5rem;
+    width: 81%;
+    margin-left: 8.6rem;
+    height: 100vh;
+}
+
+.collapses, .about-collapses ,.skills-collapses, .contact-collapses, .project-collapses{
+  padding: 0.5rem;
+  width: 91%;
+  margin-left: 4rem;
+}
+}
+
+
 @media screen and (max-width: 426px) {
 .container, .about-container,.skills-container, .contact-container, .project-container{
     padding: 0.5rem;
