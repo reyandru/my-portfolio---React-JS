@@ -100,7 +100,7 @@ function Contact() {
             </div>
           </div>
 
-          <h3 className="contact-msg">
+          <h3 className="contact-msg-2">
             If you want to know more, just contact me using the details above.
           </h3>
         </div>

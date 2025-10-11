@@ -3,7 +3,6 @@
   width: 82%;
   margin-left: 17.1rem;
   transition: all 0.3s ease;
-  border: 1px solid black;
 }
 
 .collapses, .about-collapses ,.skills-collapses, .contact-collapses, .project-collapses{
