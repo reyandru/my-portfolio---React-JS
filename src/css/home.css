@@ -101,6 +101,27 @@
   border-radius: 3rem;
 }
 
+@media screen and (max-width: 769px){
+
+  .myName, .home-typing, .home-name{
+    font-size: 1.3rem;
+  }
+
+  .home-desc{
+    font-size: 1rem;
+  }
+
+  .my-img{
+    width: 100%;
+    height: 60%;
+  }
+
+  .my-img > img{
+    height: 22rem;
+  }
+
+}
+
 @media screen and (max-width: 426px){
   .container{
     overflow: auto;
