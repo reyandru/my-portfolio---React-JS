@@ -53,7 +53,7 @@ function Project() {
       opacity: 0,
       autoAlpha: 0,
       duration: 1,
-      stagger: 0.8,
+      stagger: 0.4,
       ease: 'power3.out',
     });
   });
