@@ -125,6 +125,7 @@
 @media screen and (max-width: 426px){
   .container{
     overflow: auto;
+    height: 88vh !important;
   }
 
   .home-info{
@@ -168,6 +169,7 @@
 }
 
 @media screen and (max-width: 376px) {
+
    .my-img > img{
     height: 220px;
   }
@@ -178,6 +180,7 @@
 }
 
 @media screen and (max-width: 325px) {
+
    .my-img > img{
     height: 190px;
   }

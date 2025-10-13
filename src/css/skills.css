@@ -33,6 +33,7 @@
   height: 70%;
   padding: 1rem;
   border-radius: 2rem;
+  z-index: -1;
 }
 
 .skill2{
@@ -154,6 +155,7 @@
 }
 
 @media screen and (max-width: 426px){
+  
  .skills-wrapper{
    align-items: flex-start;
    flex-wrap: wrap;
@@ -204,8 +206,39 @@
 }
 
 @media screen and (max-width: 325px) {
+
  .programmings{
   font-size: 0.8rem;
   width: 30%;
+ }
+ .skill{
+  margin-bottom: 1rem;
+ }
+
+ .skills{
+  height: 45%;
+  gap: 0.5rem;
+ }
+
+ .skill-ttl{
+  font-size: 0.8rem;
+ }
+
+ .skill-desc{
+  font-size: 0.6rem;
+  line-height: 0.8rem;
+  text-align: left;
+ }
+
+ .prog-ttl{
+  font-size: 0.9rem;
+ }
+
+ .other-tools{
+  height: 30%;
+ }
+
+ .prog-tools, .design-tools{
+  font-size: 0.7rem;
  }
 }

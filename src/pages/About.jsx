@@ -15,8 +15,6 @@ function About() {
   const year = 2003;  
   const month = 7;
   const day = 19;
-  const textRef = useRef(null);
-  const picture = useRef(null);
   const info = useRef(null);
   const leftCol = useRef(null);
   const rightCol = useRef(null);
@@ -45,49 +43,30 @@ function About() {
 
 
 useEffect(() => {
-  gsap.set(textRef.current, { opacity: 0, x: -200, autoAlpha: 0 });
-  gsap.set(picture.current, { opacity: 0, scale: 0.8, rotateY: -30 });
   gsap.set(info.current, { opacity: 0 });
   gsap.set(leftCol.current, { x: -50, opacity: 0 });
   gsap.set(rightCol.current, { x: 50, opacity: 0 });
   gsap.set(description.current, { y: 30, opacity: 0 });
   gsap.set(button.current, { opacity: 0 });
 
-  const tl = gsap.timeline();
-
-  tl.to(textRef.current, {
-    x: 0,
-    opacity: 1,
-    autoAlpha: 1,
-    duration: 0.8,
-    ease: 'power3.out',
-  });
-
-  tl.to(picture.current, {
-    opacity: 1,
-    scale: 1,
-    rotateY: 0,
-    duration: 1,
-    ease: 'bounce.out',
-    transformOrigin: 'center center',
-  });
+  const tl = gsap.timeline(); 
 
   tl.to(info.current, {
     opacity: 1,
-    duration: 0.2,
+    duration: 0.6,
   });
 
   tl.to(leftCol.current, {
     x: 0,
     opacity: 1,
-    duration: 0.6,
+    duration: 0.8,
     ease: 'power2.out',
   }, "-=0.4");
 
   tl.to(rightCol.current, {
     x: 0,
     opacity: 1,
-    duration: 0.6,
+    duration: 1,
     ease: 'power2.out',
   }, "-=0.5");
 
@@ -114,8 +93,8 @@ useEffect(() => {
       <Sidebar isCollapse={isCollapse} setIsCollapse={setIsCollapse} />
       <section className={`${isCollapse ? 'about-collapses' : 'about-container'}`}>
         <div className="section-head">
-          <h1 className="title" style={{ borderColor: theme === 'dark' ? 'white' : 'black' }} ref={textRef}>About</h1>
-          <img src={onebyone} alt="" className="myImg" height={150}  ref={picture}/>
+          <h1 className="title" style={{ borderColor: theme === 'dark' ? 'white' : 'black' }}>About</h1>
+          <img src={onebyone} alt="" className="myImg" height={150}/>
         </div>
         <div className="about-wrapper">
           <div className="about-text">

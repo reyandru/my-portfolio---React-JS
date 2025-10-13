@@ -91,7 +91,7 @@
 @media screen and (max-width: 426px){
 
   .about-container{
-  height: 90vh;
+  height: 88vh;
   }
   
  .myImg{
@@ -116,4 +116,13 @@
   height: 80px;
  }
 
+  .left, .right, .descriptions{
+  font-size: 0.8rem ;
+  height: 75%;
+ }
+
+ .downloadResume{
+  font-size: 0.8rem;
+  padding: 0.3rem 0.6rem;
+ }
 }

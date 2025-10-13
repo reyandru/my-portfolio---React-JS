@@ -129,6 +129,18 @@
 
 @media screen and (max-width: 325px) {
 
+.contact-container{
+  height: 88vh;
+}
+
+.contact-details{
+  height: 85%;
+  justify-content: space-around;
+}
+
+.col-1{
+  justify-content: space-around;
+}
  .card-col-1 > img{
   height: 30px;
  }
@@ -140,14 +152,15 @@
  .contact-info{
   font-size: 0.6rem;
  }
- .card-col-2{
-  width: 50%;
-  height: 90%;
-  row-gap: 0.5rem;
+ .card-col-1{
+  height: 30%;
+  padding: 0.5rem;
  }
-
- .contact-container{
-  border: none;
+ 
+ .card-col-2{
+  height: 75%;
+  row-gap: 0.5rem;
+  padding: 0.5rem;
  }
  
  .contact-msg{
