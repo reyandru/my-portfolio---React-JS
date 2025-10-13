@@ -112,12 +112,12 @@
   }
 
   .my-img{
-    width: 100%;
+    width: 95%;
     height: 60%;
   }
 
   .my-img > img{
-    height: 22rem;
+    height: 20rem;
   }
 
 }

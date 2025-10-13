@@ -43,6 +43,15 @@
   width: 91%;
   margin-left: 4rem;
 }
+
+.title{
+  font-size: 2rem;
+  padding: 0.2rem;
+  width: 30%;
+  border: 0.3rem solid black;
+}
+
+
 }
 
 
@@ -89,8 +98,6 @@
   border: 0.3rem solid black;
 }
 }
-
-
 
 
 @media screen and (max-width: 325px) {

@@ -154,6 +154,59 @@
   border-radius: 10px;
 }
 
+@media screen and (max-width: 769px){
+  .skills-wrapper{
+   align-items: flex-start;
+   flex-wrap: wrap;
+ }
+
+ .skills{
+  width: 45%;
+  height: 49%;
+  gap: 1rem;
+ }
+
+ .skill-ttl{
+  font-size: 1.5rem;
+ }
+
+ .skill-desc{
+  font-size: 0.8rem;
+  line-height: 1rem;
+  overflow: auto;
+ }
+
+ .skills > img{
+  height: 70px;
+ }
+
+ .prog-ttl{
+  font-size: 1.8rem;
+ }
+
+ .programmings{
+  font-size: 1.2rem;
+ }
+
+ .skill{
+  margin-bottom: 0.1rem;
+  width: 100%;
+  justify-content: space-between;
+ }
+
+.meter-container{
+  width: 70%;
+}
+
+ .meter-fill{
+  width: 30%;
+ }
+
+ .prog-tools, .design-tools{
+    font-size: 1rem;
+ }
+}
+
 @media screen and (max-width: 426px){
   
  .skills-wrapper{

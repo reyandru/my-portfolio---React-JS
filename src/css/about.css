@@ -88,6 +88,22 @@
 }
 
 
+@media screen and (max-width: 769px){
+ .myImg{
+  height: 7rem;
+ }
+
+ .left, .right, .descriptions{
+  font-size: 1.25rem;
+ }
+
+ .downloadResume{
+  font-size: 1.2rem;
+  padding: 0.5rem 1rem;
+ }
+
+}
+
 @media screen and (max-width: 426px){
 
   .about-container{

@@ -69,6 +69,54 @@
   color: white;
 }
 
+
+@media screen and (max-width: 769px){
+.col-1{
+  width: 100%;
+  height: 60%;
+ }
+
+ .col-2{
+  height: 40%;
+  width: 100%;
+ }
+
+ .card-col-1{
+  width:32%;
+  height: 60%;
+  row-gap: 0.5rem;
+  text-align: center;
+ }
+
+ .card-col-1 > img{
+  height: 40px;
+ }
+
+ .contact-name{
+  font-size: 1.7rem;
+ }
+
+ .contact-info{
+  font-size: 0.8rem;
+ }
+
+ .card-col-2{
+  width: 33%;
+  height: 90%;
+  row-gap: 0.5rem;
+  text-align: center;
+ }
+
+ .card-col-2 > img{
+  height: 40px;
+ }
+ 
+ .contact-msg, .contact-msg-2{
+  text-align: center;
+ }
+
+}
+
 @media screen and (max-width: 426px){
 .contact-container{
   height: 90vh;
