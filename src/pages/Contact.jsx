@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef, useLayoutEffect  } from 'react';
 import Sidebar from '../reusable/Sidebar';
 import '../css/hasSideBar.css';
 import '../css/contact.css';
@@ -8,6 +8,8 @@ import {
   emailIcon,
   phoneNumberIcon
 } from '../assets/assets';
+import gsap from 'gsap';
+
 
 function Contact() {
   const [isCollapse, setIsCollapse] = useState(false);
@@ -16,11 +18,35 @@ function Contact() {
     return savedTheme === 'dark' ? 'dark' : 'light';
   });
 
+    const contact = useRef([]);
+
+    contact.current = [];
+
+    const addToContact = (el) => {
+      if (el && !contact.current.includes(el)) {
+        contact.current.push(el);
+      }
+    };
+
   useEffect(() => {
     document.body.className = theme;
     localStorage.setItem('theme', theme);
   }, [theme]);
 
+
+    useLayoutEffect(() => {
+  const ctx = gsap.context(() => {
+    gsap.from(contact.current, {
+      opacity: 0,
+      autoAlpha: 0,
+      duration: 1,
+      stagger: 0.4,
+      ease: 'power3.out',
+    });
+  });
+
+  return () => ctx.revert(); 
+}, []);
   return (
     <>
       <Sidebar isCollapse={isCollapse} setIsCollapse={setIsCollapse} />
@@ -41,6 +67,7 @@ function Contact() {
                 borderColor: theme === 'dark' ? 'white' : 'black',
                 backgroundColor: theme === 'dark' ? '#363131' : '#817777ff'
               }}
+              ref={addToContact}
             >
               <img src={phoneNumberIcon} className="phoneNo" height="70" alt="Phone Icon" />
               <h2 className="contact-name">Phone no.:</h2>
@@ -53,6 +80,8 @@ function Contact() {
                 borderColor: theme === 'dark' ? 'white' : 'black',
                 backgroundColor: theme === 'dark' ? '#363131' : '#817777ff'
               }}
+              ref={addToContact}
+
             >
               <img src={fbIcon} height="70" alt="Facebook Icon" />
               <h2 className="contact-name">Facebook:</h2>
@@ -72,6 +101,8 @@ function Contact() {
                 borderColor: theme === 'dark' ? 'white' : 'black',
                 backgroundColor: theme === 'dark' ? '#363131' : '#817777ff'
               }}
+              ref={addToContact}
+
             >
               <img src={emailIcon} height="70" alt="Email Icon" />
               <h2 className="contact-name">Gmail:</h2>
@@ -86,6 +117,8 @@ function Contact() {
                 borderColor: theme === 'dark' ? 'white' : 'black',
                 backgroundColor: theme === 'dark' ? '#363131' : '#817777ff'
               }}
+              ref={addToContact}
+
             >
               <img src={githubIcon} height="70" alt="GitHub Icon" />
               <h2 className="contact-name">Github</h2>

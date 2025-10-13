@@ -34,7 +34,9 @@ function Project() {
   });
 
    const project = useRef([]);
+
     project.current = [];
+    
     const addToProj = (el) => {
       if (el && !project.current.includes(el)) {
         project.current.push(el);
